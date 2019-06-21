@@ -1,14 +1,45 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+      <button ion-button menuToggle icon-only>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-searchbar placeholder="Pesquisar"></ion-searchbar>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-slides pager>
+          <ion-slide *ngFor="let slide of slides">
+            <ion-card>
+                <img [src]="slide.imagem"/>
+                <div class="card-title"> {{slide.titulo}}</div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item tappable (click)="goToConteudo(item.id)">
+        <!--<ion-icon [name]="item.icone" item-start tappable (click)="goToConteudo(item.tipo)"></ion-icon> -->
+        {{item.titulo}}   
+      </ion-item>
+      <ion-item-options side="right">
+          <button ion-button color="primary" (click)="goToTema(item.tema)" >
+              <ion-icon name="book"></ion-icon>
+             {{item.tema}}
+            </button>
+            <button ion-button color="danger" (click)="goToTipo(item.tipo)" >
+                <ion-icon name="text"></ion-icon>
+               {{item.tipo}}
+              </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

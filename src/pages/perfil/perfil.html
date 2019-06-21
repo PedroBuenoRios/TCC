@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-avatar>
+    <img src="assets/imgs/avatar.jpg">
+  </ion-avatar>
+  <ion-list>
+    <ion-list-header>
+      <h1>Informações do perfil</h1>
+    </ion-list-header>
+    <ion-item>
+      <h3>Nome: </h3>
+      <p>{{perfil.nome}}</p>
+      <h3>Email: </h3>
+      <p>{{perfil.email}}</p>
+      <button ion-button (click)="historico()">Histórico</button>
+      <button ion-button (click)="logout()">Sair</button> 
+    </ion-item>
+  </ion-list>
+</ion-content>

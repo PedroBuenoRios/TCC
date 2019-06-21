@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle icon-only>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-searchbar placeholder="Buscar sobre {{assunto}} ..."></ion-searchbar>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-stretch>
+        <button ion-button id="filtrar" full  color="secondary" (click)="filtrar()">Filtrar</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item-sliding *ngFor="let item of itens">
+            <ion-item tappable (click)="goToConteudo(item.id)">
+              <!--<ion-icon [name]="item.icone" item-start tappable (click)="goToConteudo(item.tipo)"></ion-icon> -->
+              {{item.titulo}}   
+            </ion-item>
+            <ion-item-options side="right">
+                  <button ion-button color="danger" (click)="goToTipo(item.tipo)" >
+                      <ion-icon name="text"></ion-icon>
+                     {{item.tipo}}
+                    </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+      <img class="logo" src="../../assets/imgs/logoLogin.svg">
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+  <ion-row>
+    <ion-col col-12 >
+    <div class="container">
+      <h3>Cadastrando...</h3>
+     <ion-list>
+       <ion-item no-lines>
+         <ion-label floating>
+          Nome
+         </ion-label>
+         <ion-input type="text" required [(ngModel)]="nome" name="nome"></ion-input>
+       </ion-item>
+       <ion-item no-lines>
+          <ion-label floating>
+              Email
+             </ion-label>
+             <ion-input type="email" required [(ngModel)]="email" (ionBlur)="isEmailValido()" name="email"></ion-input>
+       </ion-item>
+       <ng-template [ngIf]="isEmailInvalido">
+        <p class="error">Desculpe mas este email está indisponível</p>
+       </ng-template>
+       <ion-item no-lines>
+          <ion-label floating>
+              Senha
+             </ion-label>
+             <ion-input type="password" required [(ngModel)]="senha" name="senha"></ion-input>
+       </ion-item>
+       <ng-template [ngIf]="senha != csenha">
+        <p class="error">Verifique sua senhas elas estão incompatíveis</p>
+       </ng-template>
+       <ion-item no-lines>
+          <ion-label floating>
+              Confirmar Senha
+             </ion-label>
+             <ion-input type="password" required [(ngModel)]="csenha" name="csenha"></ion-input> 
+            </ion-item>
+     </ion-list>
+    </div>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <button ion-button full id="cadastrar" name="cadastrar" (click)="cadastrar()" color="danger">Pronto!</button>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+</ion-content>

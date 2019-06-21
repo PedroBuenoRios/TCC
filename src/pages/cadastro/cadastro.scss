@@ -1,0 +1,39 @@
+page-cadastro {
+    ion-content{
+        background-image: url('../../assets/imgs/bgLogin.png');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-left:7px;
+        padding-right: 7px;
+    }
+    .logo{
+        float:right;
+        width: 20vw;
+    }
+    ion-input{
+        border-bottom-width:1px !important;
+        border-bottom-style:solid !important;
+        border-bottom-color: #101010 !important;
+    }
+    ion-label{
+        color:gray !important;
+    }
+    .container{
+           background-color: white;
+           box-shadow: 0px 1px 5px rgb(20, 20, 20);
+           padding: 1px 3px 1px;
+           margin-bottom: 1vh;
+       }
+    ion-header ion-icon.back-button-icon.icon {
+        color: map-get($colors, dark);
+    }
+    h3{
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .error{
+        color: red;
+        margin: 10px;
+    }
+}

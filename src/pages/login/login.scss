@@ -1,0 +1,22 @@
+page-login {
+        ion-content{
+            background-image: url('../../assets/imgs/bgLogin.png');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .button{
+            margin-top: 10px;
+            padding:3px 0px 3px;
+            background-color: #212121;
+            color:white;
+        }
+        .titulo{
+         color: white;
+         font-size: 15vw;
+         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .containerBtn{
+            margin-top:8vh;
+        }
+}

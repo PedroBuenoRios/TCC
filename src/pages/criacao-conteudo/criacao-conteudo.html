@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar >
+      <button ion-button menuToggle icon-only>
+        <ion-icon color="primary" name="menu"></ion-icon>
+      </button>
+     <h3> Criando...</h3>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+          <ion-input type="text" placeholder="Título" id="titulo" name="titulo" [(ngModel)]="titulo" max-length="40"></ion-input>
+      </ion-col>
+    </ion-row>
+        <ion-row>
+            <ion-col width-25>
+              <ion-label>Tags</ion-label>
+                  <ion-input type="text" [(ngModel)]="tag" placeholder="Digite as tags"></ion-input>
+                  <button ion-button (click)="adicionaTag()">Adicionar</button>
+                </ion-col>
+            </ion-row>
+          <ion-row>
+            <ion-badge *ngFor="let t of tags">
+              {{t}}
+            </ion-badge>
+          </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <ion-textarea id="descricao" placeholder="Descrição" name="descricao" [(ngModel)]="descricao" rows="10"></ion-textarea>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col >
+              <button full large class="btn-submit" (click)="criar()" ion-button color="secondary" type="submit">Criar</button>
+            </ion-col>
+          </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,39 @@
+{
+  "usuarios": [
+    {
+      "nome": "Pedro",
+      "email": "Pedro0",
+      "senha": "123",
+      "dirFoto": "",
+      "eventosSugeridos_ID": [],
+      "eventosAvaliados_ID": [],
+      "comentarios_ID": [],
+      "isLogado": true,
+      "id": 1
+    },
+    {
+      "nome": "afsdfs",
+      "email": "Pedro0",
+      "senha": "123",
+      "dirFoto": "",
+      "eventosSugeridos_ID": [],
+      "eventosAvaliados_ID": [],
+      "comentarios_ID": [],
+      "isLogado": true,
+      "id": 2
+    },
+    {
+      "nome": "teste",
+      "email": "Pedro",
+      "senha": "123",
+      "dirFoto": "",
+      "eventosSugeridos_ID": [],
+      "eventosAvaliados_ID": [],
+      "comentarios_ID": [],
+      "isLogado": true,
+      "id": 3
+    }
+  ],
+  "eventos": [],
+  "comentarios": []
+}
