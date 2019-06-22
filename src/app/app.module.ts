@@ -19,7 +19,7 @@ import { HistoricoPage, ListaPage } from './../pages/historico/historico';
 import { PerfilPage } from './../pages/perfil/perfil';
 import { FiltrarPage, TemaPage } from './../pages/tema/tema';
 import { MyApp } from './app.component';
-
+import { EventosProvider } from '../providers/eventos/eventos';
 
 @NgModule({
   declarations: [
@@ -64,7 +64,8 @@ import { MyApp } from './app.component';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UsersProvider
+    UsersProvider,
+    EventosProvider
     //FileTransfer
   ]
 })

@@ -25,8 +25,8 @@ export class PerfilPage {
     public http: UsersProvider,
     public modalCtrl:ModalController,
     public appCtrl: App) {
-    this.storage.get('perfil').
-      then((data) => {
+    this.storage.get('perfil')
+    .then((data) => {
         console.log(data);
         this.perfil = data;
         console.log(

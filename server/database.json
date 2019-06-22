@@ -32,6 +32,17 @@
       "comentarios_ID": [],
       "isLogado": true,
       "id": 3
+    },
+    {
+      "nome": "Pedro Bueno Rios",
+      "email": "pedrobuenorios@gmail.com",
+      "senha": "123",
+      "dirFoto": "",
+      "eventosSugeridos_ID": [],
+      "eventosAvaliados_ID": [],
+      "comentarios_ID": [],
+      "isLogado": true,
+      "id": 4
     }
   ],
   "eventos": [],

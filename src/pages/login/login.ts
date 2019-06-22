@@ -10,8 +10,7 @@ import { CadastroPage } from './../cadastro/cadastro';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  email: string;
-
+  private email: string;
   constructor(
     public navCtrl: NavController,
     public toastCtrl: ToastController,
@@ -23,8 +22,8 @@ export class LoginPage {
   }
 
   ionViewDidLoad(){
-    this.storage.get('perfil').
-    then((data) =>{
+    this.storage.get('perfil')
+    .then((data) =>{
       if(data != null){
         console.log(data);
         this.navCtrl.setRoot(TabsPage);
@@ -36,8 +35,8 @@ export class LoginPage {
   }
 
   logar(){
-    let senha: string = '';
-     let alert = this.alertCtrl.create({
+     let alert = this.alertCtrl.create
+     ({
        mode: 'ios',
        title:'Login',
        inputs:[
@@ -58,29 +57,28 @@ export class LoginPage {
        buttons:[
          {
            text:'Entrar',
-           handler: data=>{
-             console.log(data);
-             return data;
-           }
+           handler: (data)=>{ return data; }
          }
-       ]
-     });
+        ]
+      });
      alert.present();
      //O método onDidDismiss é usado para que quando o alert for fechado
      //seja realizada a verificação do login
-     alert.onDidDismiss(data=>{
+     alert.onDidDismiss((data)=>{
       console.log(data);
         this.email=data.email;
-       this.httpUser.logar(this.email, data.senha)
+        this.httpUser.logar(this.email, data.senha)
       //Significa que existe o usuário e ele entrará na sessão
-      .then(data => {
+      .then((data) => {
         this.storage.set('perfil',data);
-          console.log(data);
-            this.Toast('Pronto você está Logado!!',1500,'middle');
-          this.navCtrl.setRoot(TabsPage);
+            console.log(data);
+              this.Toast('Pronto você está Logado!!',1500,'middle');
+            this.navCtrl.setRoot(TabsPage);
+        
         })//Significa que não econtrou o usuário e entrará na exceção
-      .catch(error => {
-        this.Toast('Acesso Negado: Usuário e/ou senha Invaíldos', 1500,'middle')
+      .catch((error) => {
+        this.Toast('Acesso Negado: Usuário e/ou senha Invaíldos', 1500,'middle');
+        console.log(error);
       });
     });
   }

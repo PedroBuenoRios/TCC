@@ -7,8 +7,6 @@ import { IonicPage, NavController, NavParams, TextInput, ToastController } from 
 import { UsersProvider } from '../../providers/users/users';
 import { TabsPage } from './../tabs/tabs';
 
-
-
 @IonicPage()
 @Component({
   selector: 'page-cadastro',
@@ -16,12 +14,12 @@ import { TabsPage } from './../tabs/tabs';
 })
 export class CadastroPage {
   @ViewChild('email') txtEmail: TextInput;
-  usuario: any;
-  nome: string;
-  email: string;
-  senha: string;
-  csenha: string;
-  isEmailInvalido: boolean;
+  private usuario: any;
+  public nome: string;
+  public email: string;
+  public senha: string;
+  public csenha: string;
+  public isEmailInvalido: boolean;
   //foto: FileOriginal;
   constructor(
     public navCtrl: NavController,
